@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-1"  # Change to your desired region
+  region = "ap-south-1"  # Change to your desired region
 }
 
 
@@ -39,4 +39,8 @@ module "tg_load_balancer" {
   security_group = module.security_group.sg_id
   subnet_ids = module.vpc.public_subnet_ids
   asg_instance_ids = module.asg.asg_instance_ids
+  asg_instances = module.asg.asg_instances
 }
+
+
+

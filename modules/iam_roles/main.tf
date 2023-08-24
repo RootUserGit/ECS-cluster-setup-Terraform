@@ -1,3 +1,26 @@
+# variable "create_role_policy" {
+#     type = bool
+#     default = false
+# }
+
+
+# variable "roles" {
+#   value = [
+#     "ecsInstanceRole",
+#     "ecsTaskExecutionRole",
+#     "ecsServiceRole"
+#   ]
+# }
+
+
+# data "aws_iam_role" "ecs_instance_role" { 
+#     for_each = var.roles
+#     content {
+#         name = roles.value
+#     } 
+# }
+
+
 
         #     
         #      ___ _   _ ____ _____  _    _   _  ____ _____ 
@@ -7,12 +30,6 @@
         #     |___|_| \_|____/ |_/_/   \_\_| \_|\____|_____|
         #                                                   
         #     
-
-provider "aws" {
-  region = "us-east-1"  # Change to your desired region
-  profile = "default" 
-}
-  
 
 
 resource "aws_iam_role" "ecs_instance_role" {

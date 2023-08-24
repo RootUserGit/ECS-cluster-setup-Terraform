@@ -1,7 +1,3 @@
-provider "aws" {
-  region = "us-east-1"  # Change to your desired region
-}
-
 resource "aws_security_group" "web_server_sg" {
   name        = "test-vpc-sg"
   description = "SSH and HTTP access"

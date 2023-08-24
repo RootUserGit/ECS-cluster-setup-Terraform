@@ -1,10 +1,3 @@
-
-provider "aws" {
-  region = "us-east-1"  # Change to your desired region
-  profile = "default" 
-}
-
-
 resource "aws_vpc" "test_vpc" {
   cidr_block = "192.0.0.0/22"
   enable_dns_support = true
@@ -24,7 +17,7 @@ resource "aws_internet_gateway" "test_igw" {
 resource "aws_subnet" "subnet_a" {
   vpc_id                  = aws_vpc.test_vpc.id
   cidr_block              = "192.0.0.0/24"
-  availability_zone       = "us-east-1a"  # Change to your desired AZ
+  availability_zone       = "ap-south-1a"  # Change to your desired AZ
   map_public_ip_on_launch = true
   tags = {
     Name = "subnet-a"
@@ -34,7 +27,7 @@ resource "aws_subnet" "subnet_a" {
 resource "aws_subnet" "subnet_b" {
   vpc_id                  = aws_vpc.test_vpc.id
   cidr_block              = "192.0.1.0/24"
-  availability_zone       = "us-east-1b"  # Change to your desired AZ
+  availability_zone       = "ap-south-1b"  # Change to your desired AZ
   map_public_ip_on_launch = true
   tags = {
     Name = "subnet-b"

@@ -15,3 +15,7 @@ variable "subnet_ids" {
 variable "asg_instance_ids" {
   
 }
+
+variable "asg_instances" {
+  
+}

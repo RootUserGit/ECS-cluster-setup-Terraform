@@ -1,8 +1,3 @@
-provider "aws" {
-  region = "us-east-1"  # Change to your desired region
-  profile = "default" 
-}
-
 resource "aws_lb_target_group" "test" {
   name     = "demo-tg"
   port     = 80
@@ -36,7 +31,7 @@ resource "aws_lb_listener" "test" {
 }
 
 resource "aws_lb_target_group_attachment" "test" {
-  count             = 3
+  count             = var.asg_instances
   target_group_arn = aws_lb_target_group.test.arn
   target_id        = var.asg_instance_ids[count.index]
   port             = 80
